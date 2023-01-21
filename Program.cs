@@ -24,8 +24,8 @@ builder.Services.AddCors(options =>
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<UserContext>(opt => opt.UseNpgsql("Host=localhost;Port=5432;Pooling=true;Database=DrawDB;User Id=postgres;Password=123;"));
-builder.Services.AddDbContext<ShapeContext>(opt => opt.UseNpgsql("Host=localhost;Port=5432;Pooling=true;Database=DrawDB;User Id=postgres;Password=123;"));
+builder.Services.AddDbContext<UserContext>(opt => opt.UseNpgsql("Host=containers-us-west-21.railway.app;Port=6598;Pooling=true;Database=railway;User Id=postgres;Password=pq31nScnyIutlStMvsil;"));
+builder.Services.AddDbContext<ShapeContext>(opt => opt.UseNpgsql("Host=containers-us-west-21.railway.app;Port=6598;Pooling=true;Database=railway;User Id=postgres;Password=pq31nScnyIutlStMvsil;"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
