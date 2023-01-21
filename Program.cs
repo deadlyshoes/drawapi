@@ -15,7 +15,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AnotherPolicy",
         policy =>
         {
-            policy.WithOrigins("https://deadlyshoes.github.io")
+            policy.AllowAnyOrigin()
                                 .AllowAnyHeader()
                                 .AllowAnyMethod();
         });
