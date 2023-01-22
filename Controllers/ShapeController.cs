@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DrawApi.Models;
 using Microsoft.AspNetCore.Cors;
+using NuGet.Versioning;
 
 namespace DrawApi.Controllers
 {
@@ -40,6 +41,14 @@ namespace DrawApi.Controllers
             }
 
             return shape;
+        }
+
+        // GET: api/Shape/user/5
+        [EnableCors("AnotherPolicy")]
+        [HttpGet("user/{id}")]
+        public async Task<ActionResult<List<Shape>>> GetUserShapes(int id)
+        {
+            return await _context.shapes.Where(s => s.userId == id).ToListAsync();
         }
 
         // PUT: api/Shape/5
