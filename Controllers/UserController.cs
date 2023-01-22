@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DrawApi.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace DrawApi.Controllers
 {
@@ -42,6 +43,7 @@ namespace DrawApi.Controllers
         }
 
         // GET: api/User/login=...&password=...
+        [EnableCors("AnotherPolicy")]
         [HttpGet("login")]
         public async Task<ActionResult<User>> GetUserLogin([FromQuery(Name="login")] String login, [FromQuery(Name="password")] String password)
         {
