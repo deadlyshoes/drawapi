@@ -91,6 +91,9 @@ namespace DrawApi.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser([FromForm] User user)
         {
+            var shapes = await _context.shapes.Where(s => s.userId == user.id).ToListAsync();
+            user.shapes = shapes;
+
             _context.users.Add(user);
             await _context.SaveChangesAsync();
 

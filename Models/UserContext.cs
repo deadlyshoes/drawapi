@@ -10,5 +10,6 @@ namespace DrawApi.Models
         }
 
         public DbSet<User> users { get; set; } = null!;
+        public DbSet<Shape> shapes { get; set; } = null!;
     }
 }
